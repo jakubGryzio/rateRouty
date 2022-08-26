@@ -1,0 +1,180 @@
+.closeButton {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  width: 35px;
+  height: 35px;
+}
+
+.closeButton button {
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.closeButton button:hover {
+  transform: scale(0.9);
+}
+
+.headerContainer {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  width: 52%;
+  height: 7%;
+  display: flex;
+  flex-direction: row;
+  font-family: inherit;
+  color: #5a5555;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.headerContainer p {
+  transition: 0.2s;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.headerLogin {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(90, 85, 85, 0.35);
+  align-items: center;
+}
+
+.headerRegister {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(90, 85, 85, 0.35);
+  align-items: center;
+}
+
+.headerContainer p:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.active {
+  color: #5a5555 !important;
+  text-decoration: underline #d2d8eb;
+  text-underline-offset: 6px;
+}
+
+.formContainer {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 75%;
+  left: 10%;
+  top: 22%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputForm {
+  width: 85%;
+  height: 42%;
+  border-radius: 37px;
+}
+
+.inputForm input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 37px;
+  background-color: #f8fcfc;
+  padding: 19px 38px 19px 38px;
+  font-family: inherit;
+  color: #5a5555;
+  font-weight: bold;
+  font-size: 18px;
+  filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.16));
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.inputForm input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #5a5555;
+}
+
+::placeholder {
+  color: rgba(90, 85, 85, 0.35);
+  opacity: 1;
+}
+
+.logInCheckbox {
+  margin-top: 4%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logInCheckbox input {
+  width: 20px;
+  height: 20px;
+}
+
+.logInCheckbox label {
+  margin-left: 3%;
+  font-family: inherit;
+  color: #5a5555;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.loginButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 8%;
+  width: 65%;
+  height: 13%;
+}
+
+.loginButtonContainer button {
+  background-color: rgba(84, 130, 147, 0.5) !important;
+}
+
+.passwordRemainderContainer {
+  margin-top: 8%;
+  width: 60%;
+  height: 8%;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordRemainderContainer p {
+  font-family: inherit;
+  color: rgba(90, 85, 85, 0.7);
+  font-weight: bold;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.passwordRemainderContainer p:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}

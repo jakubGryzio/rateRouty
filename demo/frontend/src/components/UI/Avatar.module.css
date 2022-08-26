@@ -1,0 +1,31 @@
+.avatarContainer {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin: 15px;
+}
+
+.avatarContainer button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, 0.16));
+  transition-duration: 0.2s;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.avatarContainer button:hover {
+  transform: scale(0.9);
+}
+
+.avatar {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
