@@ -1,21 +1,50 @@
 import React from "react";
 import Criteria from "./Criteria";
-import { ReactComponent as PetrolStation } from "../../assets/petrolStation.svg";
-import { ReactComponent as Restaurant } from "../../assets/restaurant.svg";
-import { ReactComponent as Randomize } from "../../assets/randomize.svg";
+import petrolStation from "../../assets/petrolStation.svg";
+import restaurant from "../../assets/restaurant.svg";
+import randomize from "../../assets/randomize.svg";
 import classes from "./Criteria.module.css";
 
-const CriteriaContainer = () => {
+const CriteriaContainer = (props) => {
+  const restaurantFilterHandler = () => {
+    const food = ["Restaurant", "Fast Food", "Bar"];
+    props.map.current.setFilter("poi-label", [
+      "any",
+      ["in", ["get", "type"], ["literal", food]],
+    ]);
+  };
+
+  const petrolStationFilterHandler = () => {
+    const petrolStation = ["Fuel"];
+    props.map.current.setFilter("poi-label", [
+      "any",
+      ["in", ["get", "type"], ["literal", petrolStation]],
+    ]);
+  };
   return (
     <div className={classes.criteriaContainer}>
       <Criteria>
-        <PetrolStation className={classes.criteriaLogo} />
+        <img
+          src={petrolStation}
+          alt="petrol_station"
+          onClick={petrolStationFilterHandler}
+          className={classes.criteriaLogo}
+        />
       </Criteria>
       <Criteria>
-        <Restaurant className={classes.criteriaLogo} />
+        <img
+          src={restaurant}
+          alt="petrol_station"
+          onClick={restaurantFilterHandler}
+          className={classes.criteriaLogo}
+        />
       </Criteria>
       <Criteria>
-        <Randomize className={classes.criteriaLogo} />
+        <img
+          src={randomize}
+          alt="petrol_station"
+          className={classes.criteriaLogo}
+        />
       </Criteria>
     </div>
   );

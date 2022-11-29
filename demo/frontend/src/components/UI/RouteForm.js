@@ -18,22 +18,22 @@ const RouteForm = () => {
   return (
     <div className={classes.routeFormCointainer}>
       <div className={classes.inputContainer}>
-        <div className={classes.inputDestination}>
+        <div id="geocoder-start" className={classes.inputDestination}>
           <label htmlFor="start">
             <StartLabelSvg className={classes.startLabel} />
           </label>
-          <input
+          {/* <input
             type="text"
             id="start"
             value={"Warszawa"}
             onChange={() => {}}
-          />
+          /> */}
         </div>
-        <div className={classes.inputDestination}>
+        <div id="geocoder-end" className={classes.inputDestination}>
           <label htmlFor="end">
             <EndLabelSvg className={classes.endLabel} />
           </label>
-          <input type="text" id="end" value={"Lublin"} onChange={() => {}} />
+          {/* <input type="text" id="end" value={"Lublin"} onChange={() => {}} /> */}
         </div>
       </div>
       <div className={classes.settingsContainer}>

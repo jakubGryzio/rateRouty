@@ -1,20 +1,6 @@
-.userPlacesContainer {
-  position: absolute;
-  margin-top: 5%;
-  top: 53%;
-  height: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.userPlacesButton {
   width: 85%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.userPlacesContainer button {
-  width: 100%;
-  height: 43%;
+  height: 2.6rem;
   border: none;
   cursor: pointer;
   border-radius: 30px;
@@ -25,8 +11,9 @@
   font-family: inherit;
   font-weight: bold;
   font-size: 18px;
+  color: #5a5555;
 }
 
-.userPlacesContainer button:hover {
+.userPlacesButton:hover {
   transform: scale(0.9);
 }

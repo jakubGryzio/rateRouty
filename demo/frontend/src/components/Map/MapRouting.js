@@ -1,54 +1,36 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import useRoute from "../hooks/use-route";
+import { useSelector } from "react-redux";
+
+const startMarker = new mapboxgl.Marker();
+const endMarker = new mapboxgl.Marker();
 
 const MapRouting = (props) => {
-  const accessToken =
-    "pk.eyJ1IjoiamFrdWJncnl6aW8iLCJhIjoiY2toeDlyOTVhMDVtdDJxbzducmV1aWZndyJ9.TClJXnJE1ALnmPi25y0m3Q";
+  const showRoute = useSelector((state) => state.ui.showRoute);
+  const start = useSelector((state) => state.map.startRoutePoint.location);
+  const end = useSelector((state) => state.map.endRoutePoint.location);
 
-  const fetchRouteData = async () => {
-    const start = [21.00879, 52.231475];
-    const end = [22.570102, 51.250559];
+  const { fetchRouteHandler } = useRoute(start, end);
 
-    const response = await fetch(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${accessToken}&alternatives=true&overview=full`,
-      { method: "GET" }
-    );
+  const routeDataHandler = useCallback(async () => {
+    const buffer_value = 1.0;
 
-    const json = await response.json();
+    startMarker.remove();
+    endMarker.remove();
 
-    const startMarker = new mapboxgl.Marker()
-      .setLngLat(start)
-      .addTo(props.map.current);
-    const endMarker = new mapboxgl.Marker()
-      .setLngLat(end)
-      .addTo(props.map.current);
-
-    props.map.current.fitBounds([start, end], {
-      padding: { top: 50, bottom: 50, left: 50, right: 330 },
-    });
-
-    const data = json.routes[0];
-    const route = data.geometry.coordinates;
-
-    const geojson = {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "LineString",
-        coordinates: route,
-      },
-    };
+    const route_data = await fetchRouteHandler(buffer_value);
 
     if (props.map.current.getSource("route")) {
-      props.map.current.getSource("route").setData(geojson);
+      props.map.current.getSource("route").setData(route_data);
     } else {
       props.map.current.addLayer({
         id: "route",
         type: "line",
         source: {
           type: "geojson",
-          data: geojson,
+          data: route_data,
         },
         layout: {
           "line-join": "round",
@@ -61,11 +43,18 @@ const MapRouting = (props) => {
         },
       });
     }
-  };
+
+    startMarker.setLngLat(start).addTo(props.map.current);
+    endMarker.setLngLat(end).addTo(props.map.current);
+
+    props.map.current.fitBounds([start, end], {
+      padding: { top: 120, bottom: 120, left: 120, right: 330 },
+    });
+  }, [fetchRouteHandler, props.map]);
 
   useEffect(() => {
-    fetchRouteData();
-  });
+    routeDataHandler();
+  }, [start, end, showRoute]);
 };
 
 export default MapRouting;

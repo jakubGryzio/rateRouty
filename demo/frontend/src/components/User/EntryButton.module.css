@@ -21,3 +21,12 @@
 .entryButtonContainer button:hover {
   transform: scale(0.9);
 }
+
+.entryButtonContainer button:disabled,
+.entryButtonContainer button:disabled:hover,
+.entryButtonContainer button:disabled:active {
+  background-color: #ccc !important;
+  color: #29292929;
+  cursor: not-allowed;
+  transform: none;
+}

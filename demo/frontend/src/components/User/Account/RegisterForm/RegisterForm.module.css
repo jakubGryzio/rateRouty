@@ -1,0 +1,58 @@
+.formContainer {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  left: 10%;
+  top: 22%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+
+.invalid input {
+  background-color: #f6928c !important;
+}
+
+.invalid input:focus {
+  background-color: #f7d8d6 !important;
+}
+
+.registerButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 8%;
+  width: 65%;
+  height: 45px;
+}
+
+.registerButtonContainer button {
+  background-color: rgba(84, 130, 147, 0.5) !important;
+}
+
+.routeToLoginPageContainer {
+  margin-top: 5%;
+  width: 60%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.routeToLoginPageContainer p {
+  font-family: inherit;
+  color: rgba(90, 85, 85, 0.7);
+  font-weight: bold;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.routeToLoginPageContainer p:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}

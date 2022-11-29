@@ -4,7 +4,7 @@ import classes from "./Criteria.module.css";
 const Criteria = (props) => {
   return (
     <div className={classes.criteria}>
-      <button>{props.children}</button>
+      <button onClick={props.onClick}>{props.children}</button>
     </div>
   );
 };

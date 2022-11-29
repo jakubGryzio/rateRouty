@@ -4,7 +4,9 @@ import classes from "./EntryButton.module.css";
 const EntryButton = (props) => {
   return (
     <div className={classes.entryButtonContainer}>
-      <button onClick={props.onClick}>Zaloguj</button>
+      <button disabled={props.disabled} onClick={props.onClick}>
+        {props.title}
+      </button>
     </div>
   );
 };

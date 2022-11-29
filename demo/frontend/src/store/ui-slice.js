@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   userPanelShow: { showed: false, enable: false },
-  loginFormShowed: false,
   showModal: false,
   activeHeaderBar: "login",
   showRoute: false,
+  showRatingForm: false,
+  ratedPlaces: { show: false, title: "", url: "", favorite: false },
 };
 
 const uiSlice = createSlice({
@@ -15,12 +16,6 @@ const uiSlice = createSlice({
     toggleUserPanel(state) {
       state.userPanelShow.enable = true;
       state.userPanelShow.showed = !state.userPanelShow.showed;
-    },
-    openLoginForm(state) {
-      state.loginFormShowed = true;
-    },
-    closeLoginForm(state) {
-      state.loginFormShowed = false;
     },
     showModal(state) {
       state.showModal = true;
@@ -36,6 +31,24 @@ const uiSlice = createSlice({
     },
     showRoute(state) {
       state.showRoute = true;
+    },
+    showRatingForm(state) {
+      state.showRatingForm = true;
+    },
+    closeRatingForm(state) {
+      state.showRatingForm = false;
+    },
+    showRatedPlaces(state, actions) {
+      state.ratedPlaces.show = true;
+      state.ratedPlaces.title = actions.payload.title;
+      state.ratedPlaces.url = actions.payload.url;
+      state.ratedPlaces.favorite = actions.payload.favorite;
+    },
+    closeRatedPlaces(state) {
+      state.ratedPlaces.show = false;
+      state.ratedPlaces.title = "";
+      state.ratedPlaces.url = "";
+      state.ratedPlaces.favorite = false;
     },
   },
 });

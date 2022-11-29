@@ -1,14 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
-
 * {
   box-sizing: border-box;
 }
-
-html {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
 body {
   margin: 0;
   padding: 0;
+}
+
+h4,
+h5 {
+  color: #5a5555;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mapboxgl-ctrl-geocoder {
+  border-radius: 37px !important;
+  font-family: "Lato", sans-serif !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+  top: -440% !important;
+  border-radius: 25px !important;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  background: transparent !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon-close {
+  margin-right: -130px !important;
 }

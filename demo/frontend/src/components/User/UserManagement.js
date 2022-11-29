@@ -1,15 +1,20 @@
 import React from "react";
 import classes from "./UserManagement.module.css";
-import UserPlaces from "./UserPlaces";
+import UserPlaces from "./UserPlaces/UserPlaces";
 import { useSelector, useDispatch } from "react-redux";
-import { ReactComponent as AvatarSvg } from "../../assets/avatar_notAuth.svg";
+import avatar from "../../assets/avatar_notAuth.svg";
 import { ReactComponent as CameraSvg } from "../../assets/camera.svg";
 import EntryButton from "./EntryButton";
 import uiSlice from "../../store/ui-slice";
+import authSlice from "../../store/auth-slice";
 
-const UserManagement = () => {
+const LOGIN_TITLE = "Zaloguj";
+const LOGOUT_TITLE = "Wyloguj";
+
+const UserManagement = ({ map }) => {
   const dispatch = useDispatch();
   const userPanelIsShown = useSelector((state) => state.ui.userPanelShow);
+  const isLogged = useSelector((state) => state.auth.isLogged);
 
   const animationClasses = userPanelIsShown.showed
     ? classes.showPanel
@@ -18,24 +23,31 @@ const UserManagement = () => {
     userPanelIsShown.enable ? animationClasses : ""
   }`;
 
+  const loginHandler = () => {
+    if (!isLogged) {
+      dispatch(uiSlice.actions.showModal());
+    } else {
+      dispatch(authSlice.actions.logOut());
+    }
+  };
+
   return (
     <React.Fragment>
       <div className={userPanelClasses}>
         <div className={classes.userPanel}>
           <div className={classes.avatarContainer}>
-            <AvatarSvg className={classes.avatar} />
+            <img src={avatar} alt="avatar" className={classes.avatar} />
             <div className={classes.uploadImage}>
               <button>
                 <CameraSvg className={classes.camera} />
               </button>
             </div>
           </div>
-          <UserPlaces />
+          {isLogged && <UserPlaces map={map} />}
           <div className={classes.loginButtonContainer}>
             <EntryButton
-              onClick={() => {
-                dispatch(uiSlice.actions.showModal());
-              }}
+              title={!isLogged ? LOGIN_TITLE : LOGOUT_TITLE}
+              onClick={loginHandler}
             />
           </div>
         </div>

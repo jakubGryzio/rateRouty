@@ -1,0 +1,46 @@
+.headerContainer {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  width: 52%;
+  height: 7%;
+  display: flex;
+  flex-direction: row;
+  font-family: inherit;
+  color: #5a5555;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.headerContainer p {
+  transition: 0.2s;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.headerLogin {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(90, 85, 85, 0.35);
+  align-items: center;
+}
+
+.headerRegister {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(90, 85, 85, 0.35);
+  align-items: center;
+}
+
+.headerContainer p:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.active {
+  color: #5a5555 !important;
+  text-decoration: underline #d2d8eb;
+  text-underline-offset: 6px;
+}

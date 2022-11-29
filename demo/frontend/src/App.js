@@ -6,22 +6,23 @@ import Logo from "./components/UI/Logo";
 import RouteForm from "./components/UI/RouteForm";
 import UserManagement from "./components/User/UserManagement";
 import Account from "./components/User/Account/Account";
-import RouteGeocoding from "./components/Map/RouteGeocoding";
+// import RouteGeocoding from "./components/Map/RouteGeocoding";
 import { useSelector } from "react-redux";
-import React from "react";
+import React, { useRef } from "react";
 
 const App = () => {
   const modal = useSelector((state) => state.ui.showModal);
+  const map = useRef();
 
   return (
     <React.Fragment>
       <Logo />
       <Avatar />
-      <UserManagement />
+      <UserManagement map={map} />
       {modal && <Account />}
-      <CriteriaContainer />
+      <CriteriaContainer map={map} />
       <RouteForm />
-      <MapView />
+      <MapView ref={map} />
     </React.Fragment>
   );
 };

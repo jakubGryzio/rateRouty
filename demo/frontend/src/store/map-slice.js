@@ -6,6 +6,12 @@ const initialState = {
     // location: { lng: 15.0218, lat: 45.2212 },
     zoom: 9,
   },
+  startRoutePoint: {
+    location: [],
+  },
+  endRoutePoint: {
+    location: [],
+  },
 };
 
 const mapSlice = createSlice({
@@ -14,6 +20,12 @@ const mapSlice = createSlice({
   reducers: {
     setUserLocation(state, action) {
       state.mapDetails.location = action.payload;
+    },
+    setStartRoutePoint(state, action) {
+      state.startRoutePoint.location = action.payload;
+    },
+    setEndRoutePoint(state, action) {
+      state.endRoutePoint.location = action.payload;
     },
   },
 });
