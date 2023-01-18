@@ -1,0 +1,21 @@
+import food from "./svg/food.svg";
+import decoration from "./svg/decoration.svg";
+import service from "./svg/service.svg";
+import faceLove from "./svg/faceLove.svg";
+import faceOk from "./svg/faceOk.svg";
+import faceSad from "./svg/faceSad.svg";
+import logo from "./svg/logo.svg";
+import avatar from "./svg/avatar_notAuth.svg";
+import camera from "./svg/camera.svg";
+import closeButton from "./svg/close.svg";
+
+export const foodSvg = food;
+export const decorationSvg = decoration;
+export const serviceSvg = service;
+export const faceLoveSvg = faceLove;
+export const faceOkSvg = faceOk;
+export const faceSadSvg = faceSad;
+export const logoSvg = logo;
+export const avatarSvg = avatar;
+export const cameraSvg = camera;
+export const closeButtonSvg = closeButton;

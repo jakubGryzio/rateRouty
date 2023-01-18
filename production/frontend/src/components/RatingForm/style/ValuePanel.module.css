@@ -1,0 +1,25 @@
+.panel {
+  display: flex;
+  flex-direction: row;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.type_button {
+  background-color: #5a5555;
+  width: 25px;
+  height: 18px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border: none;
+  color: #f8fcfc;
+  font-size: 1.1rem;
+}
+
+.type_button:hover {
+  transform: scale(0.9);
+}

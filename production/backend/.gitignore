@@ -1,0 +1,7 @@
+venv/
+*.pyc
+*.code-workspace
+*.bat
+*.txt
+__pycache__/
+migrations/

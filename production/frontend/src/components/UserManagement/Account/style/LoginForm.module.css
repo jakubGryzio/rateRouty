@@ -1,0 +1,78 @@
+.formContainer {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  left: 10%;
+  top: 22%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+
+.invalid input {
+  background-color: #f6928c !important;
+}
+
+.invalid input:focus {
+  background-color: #f7d8d6 !important;
+}
+
+.logInCheckbox {
+  margin-top: 4%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logInCheckbox input {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.logInCheckbox label {
+  margin-left: 0.5rem;
+  font-family: inherit;
+  color: #5a5555;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.loginButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 10%;
+  width: 65%;
+  height: 45px;
+}
+
+.loginButtonContainer button {
+  background-color: rgba(84, 130, 147, 0.5) !important;
+}
+
+.passwordRemainderContainer {
+  margin-top: 5%;
+  width: 60%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.passwordRemainderContainer p {
+  font-family: inherit;
+  color: rgba(90, 85, 85, 0.7);
+  font-weight: bold;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.passwordRemainderContainer p:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}

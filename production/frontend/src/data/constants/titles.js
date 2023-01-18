@@ -1,0 +1,10 @@
+export const LOGIN_TITLE = "Zaloguj";
+export const LOGOUT_TITLE = "Wyloguj";
+export const REGISTER_TITLE = "Zarejestruj";
+export const USERNAME_PLACEHOLDER = "Nazwa użytkownika";
+export const EMAIL_PLACEHOLDER = "E-mail";
+export const PASSWORD_PLACEHOLDER = "Hasło";
+export const CONFIRM_PASSWORD_PLACEHOLDER = "Potwierdź hasło";
+export const HAVE_ACCOUNT_TITLE = "Masz już konto? Zaloguj się";
+export const NOT_LOGOUT_TITLE = "Pozostań zalogowany";
+export const PASS_REMAINDER_TITLE = "Zapomniałeś hasła?";

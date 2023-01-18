@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,400&display=swap");
+html,
+body {
+  font-family: "Lato", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h4,
+h5 {
+  color: #5a5555;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  transform: scale(0.9);
+}
+
+.mapboxgl-ctrl-geocoder {
+  border-radius: 37px !important;
+  font-family: "Lato", sans-serif !important;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+  top: -440% !important;
+  border-radius: 25px !important;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  background: transparent !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon-close {
+  margin-right: -130px !important;
+}

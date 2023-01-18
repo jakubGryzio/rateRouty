@@ -1,0 +1,27 @@
+.panel {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  justify-content: center;
+  transform: translateX(3em);
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+}
+
+.panel button {
+  background: transparent;
+  border: none;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.panel button:hover,
+.panel button:focus,
+.panel button:active {
+  transform: scale(0.8);
+}

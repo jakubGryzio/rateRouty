@@ -1,0 +1,71 @@
+.userPanelContainer {
+  width: 22%;
+  height: 55%;
+  position: absolute;
+  top: 15%;
+  right: 0;
+  margin: 15px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.loginButtonContainer {
+  margin-top: 5%;
+  width: 60%;
+  height: 2.6rem;
+}
+
+.userPanel {
+  background-color: #bbebf8;
+  width: 100%;
+  height: auto;
+  min-height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1.3rem;
+  border-radius: 60px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.userPanel p {
+  margin: 0;
+  margin-top: 7px;
+  margin-bottom: 5px;
+  padding: 0;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 19px;
+  color: #5a5555;
+}
+
+.showPanel {
+  visibility: visible;
+  animation: showPanel 500ms ease-out forwards;
+}
+
+.hidePanel {
+  visibility: visible;
+  animation: hidePanel 500ms ease-out forwards;
+}
+
+@keyframes showPanel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hidePanel {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
